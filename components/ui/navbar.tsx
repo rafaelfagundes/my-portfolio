@@ -8,8 +8,10 @@ import {
   UserCircle,
 } from "@phosphor-icons/react";
 import clsx from "clsx";
-import { useRouter } from "next/navigation";
-import { cloneElement, useState } from "react";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { cloneElement, useEffect, useState } from "react";
 import { Button } from "./button";
 import CustomCard from "./custom-card";
 import { ThemeSwitcher } from "./theme-switcher";
@@ -38,15 +40,14 @@ const navItems = [
 ];
 
 function Navbar() {
-  const router = useRouter();
+  const pathname = usePathname();
   const [currentPage, setCurrentPage] = useState("/");
 
   const iconSize = 24;
 
-  const handleClick = (page: string) => {
-    setCurrentPage(page);
-    router.push(page);
-  };
+  useEffect(() => {
+    setCurrentPage(pathname);
+  }, [pathname]);
 
   return (
     <>
@@ -59,9 +60,9 @@ function Navbar() {
                 <Icon
                   key={item.href}
                   active={currentPage === item.href}
-                  handleClick={() => handleClick(item.href)}
                   iconSize={iconSize}
                   icon={item.icon}
+                  href={item.href}
                 />
               ))}
             </div>
@@ -80,32 +81,33 @@ function Navbar() {
 }
 
 function Icon({
+  href,
   active,
-  handleClick,
   icon,
   iconSize,
 }: {
+  href: string;
   active: boolean;
-  handleClick: (page: string) => void;
   icon: React.ReactElement;
   iconSize: number;
 }) {
   return (
-    <div
-      className={clsx(
-        "p-1.5 cursor-pointer",
-        active && "bg-gray-100 dark:bg-gray-700/50 rounded-full"
-      )}
-      onClick={() => handleClick(icon.props.name)}
-    >
-      {cloneElement(icon, {
-        size: iconSize,
-        className: clsx(
-          icon.props.className,
-          active ? "text-black dark:text-white" : "text-gray-400"
-        ),
-      })}
-    </div>
+    <Link href={href}>
+      <div
+        className={clsx(
+          "p-1.5 cursor-pointer",
+          active && "bg-gray-100 dark:bg-gray-700/50 rounded-full"
+        )}
+      >
+        {cloneElement(icon, {
+          size: iconSize,
+          className: clsx(
+            icon.props.className,
+            active ? "text-black dark:text-white" : "text-gray-400"
+          ),
+        })}
+      </div>
+    </Link>
   );
 }
 
