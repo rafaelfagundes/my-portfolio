@@ -26,7 +26,6 @@ export const InfiniteMovingCards = ({
   onClick?: () => void;
 }) => {
   const [pause, setPause] = useState(false);
-  console.log(pause);
 
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);

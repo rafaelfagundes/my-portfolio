@@ -1,5 +1,6 @@
 "use client";
 import { projects } from "@/app/data";
+import { DeviceMobileSpeaker, Globe } from "@phosphor-icons/react";
 import CustomCard from "./ui/custom-card";
 import ListItem from "./ui/list-item";
 import SectionHeader from "./ui/section-header";
@@ -21,12 +22,16 @@ function ProjectsCard() {
               value="web"
               className="data-[state=active]:bg-white/85 data-[state=active]:dark:bg-zinc-800"
             >
-              Web
+              <Globe size={16} className="mr-1"></Globe> Web
             </TabsTrigger>
             <TabsTrigger
               value="mobile"
               className="data-[state=active]:bg-white/85 data-[state=active]:dark:bg-zinc-800"
             >
+              <DeviceMobileSpeaker
+                size={16}
+                className="mr-1"
+              ></DeviceMobileSpeaker>{" "}
               Mobile
             </TabsTrigger>
           </TabsList>
