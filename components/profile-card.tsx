@@ -28,7 +28,7 @@ export default function Component() {
           <div className="flex items-start justify-between">
             <div className="space-y-3 sm:pt-1">
               <h2 className="text-3xl font-bold text-zinc-900 dark:text-white pr-4 tracking-tight">
-                I'm Rafael Fagundes
+                {`I'm Rafael Fagundes`}
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 pr-4 ">
                 Experienced full stack & mobile developer based in Canada.

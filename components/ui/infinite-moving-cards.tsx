@@ -25,8 +25,6 @@ export const InfiniteMovingCards = ({
   play?: boolean;
   onClick?: () => void;
 }) => {
-  const [pause, setPause] = useState(false);
-
   const containerRef = React.useRef<HTMLDivElement>(null);
   const scrollerRef = React.useRef<HTMLUListElement>(null);
 
@@ -93,7 +91,7 @@ export const InfiniteMovingCards = ({
           !play && "[animation-play-state:paused]"
         )}
       >
-        {items.map((item, idx) => (
+        {items.map((item) => (
           <li
             className={`relative flex-shrink-0 flex flex-col items-center justify-center ${
               small && "scale-90"
