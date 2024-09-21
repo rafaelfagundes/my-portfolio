@@ -1,6 +1,5 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { Button } from "./button";
 import CustomCard from "./custom-card";
 import { ThemeSwitcher } from "./theme-switcher";
@@ -36,7 +35,7 @@ const mono = Mono({
 // ];
 
 function Navbar() {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   // const [currentPage, setCurrentPage] = useState("/");
 
   // const iconSize = 24;
