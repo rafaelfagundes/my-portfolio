@@ -36,14 +36,36 @@ export default function ContactForm(prop: ContactFormProps) {
 
   const onSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    console.log(data);
-    toast("Message sent!", {
-      description: "We'll get back to you as soon as possible.",
-    });
-    reset();
-    setIsSubmitting(false);
+    try {
+      const response = await fetch("/api/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          content: `New contact form submission:
+Name: ${data.name}
+Email: ${data.email}
+Message: ${data.message}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to send message");
+      }
+
+      toast("Message sent!", {
+        description: "We'll get back to you as soon as possible.",
+      });
+      reset();
+    } catch (error) {
+      console.error("Error sending message:", error);
+      toast("Failed to send message", {
+        description: "Please try again later.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
