@@ -8,6 +8,7 @@ function NotFound() {
         url="/img/what.png"
         size={120}
         alt="Not Found Page Image"
+        variant="destructive"
       ></Avatar>
       <Headline className="text-red-400">404</Headline>
       <Title>Page Not Found</Title>

@@ -25,8 +25,8 @@ const Footer = () => {
           <ThreadsLogo size={iconSize} className={iconClassName} />
           <XLogo size={iconSize} className={iconClassName} />
         </div>
-        <div className="border-t border-gray-200 dark:border-gray-700 pt-3 flex flex-col sm:flex-row justify-between items-center">
-          <p className="text-sm text-gray-400 dark:text-gray-400">
+        <div className="border-t border-gray-200 dark:border-gray-950 pt-3 flex flex-row justify-center items-center">
+          <p className="text-sm text-gray-400 dark:text-gray-400 text-center">
             &copy;{` ${getCurrentYear()} Rafael Fagundes.`}
           </p>
         </div>

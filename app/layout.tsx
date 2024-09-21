@@ -1,6 +1,6 @@
 import Navbar from "@/components/ui/navbar";
 import type { Metadata } from "next";
-import { Onest as SansSerif } from "next/font/google";
+import { Outfit as SansSerif } from "next/font/google";
 import Footer from "../components/footer";
 import "./globals.css";
 import Providers from "./providers";

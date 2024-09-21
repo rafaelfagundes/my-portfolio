@@ -6,7 +6,9 @@ function Headline({
   className?: string;
 }) {
   return (
-    <span className={`text-6xl font-bold text-gray-800 ${className}`}>
+    <span
+      className={`text-6xl font-bold text-gray-800 tracking-tighter ${className}`}
+    >
       {children}
     </span>
   );
@@ -21,11 +23,27 @@ function Title({
 }) {
   return (
     <h1
-      className={`text-2xl font-semibold text-gray-600 dark:text-gray-300 ${className}`}
+      className={`text-xl sm:text-2xl font-semibold text-gray-600 dark:text-gray-300 tracking-tight ${className}`}
     >
       {children}
     </h1>
   );
 }
 
-export { Headline, Title };
+function Subtitle({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <h2
+      className={`text-base sm:text-lg font-semibold text-gray-400 dark:text-gray-450 tracking-tight ${className}`}
+    >
+      {children}
+    </h2>
+  );
+}
+
+export { Headline, Subtitle, Title };

@@ -38,8 +38,8 @@ const navItems = [
 ];
 
 function Navbar() {
-  const [currentPage, setCurrentPage] = useState("/");
   const router = useRouter();
+  const [currentPage, setCurrentPage] = useState("/");
 
   const iconSize = 24;
 
@@ -51,7 +51,7 @@ function Navbar() {
   return (
     <CustomCard>
       <div className="flex flex-row items-center justify-between p-1">
-        <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-row items-center gap-3">
           {navItems.map((item) => (
             <Icon
               key={item.href}
