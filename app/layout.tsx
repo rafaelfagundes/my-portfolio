@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     description: "Full Stack & Mobile Developer",
     images: [
       {
-        url: "https://www.rafaelfagundes.com/img/profile.jpg", // Replace with your actual OG image URL
-        width: 1200,
-        height: 1200,
+        url: "https://www.rafaelfagundes.com/img/profile.png", // Replace with your actual OG image URL
+        width: 460,
+        height: 460,
         alt: "Rafael Fagundes - Full Stack & Mobile Developer",
       },
     ],
