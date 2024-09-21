@@ -33,11 +33,11 @@ function ListItem({
           <div className="text-xs font-medium text-zinc-400 dark:text-zinc-500 mr-2 px-2">
             <Emoji>{emoji}</Emoji>
           </div>
-          <div className="flex flex-col gap-1">
+          <div className="flex flex-col gap-y-0.5">
             <div className="text-sm font-medium text-zinc-500 dark:text-zinc-300">
               {title}
             </div>
-            <div className="text-xs font-light text-zinc-400 dark:text-zinc-500 pr-4">
+            <div className="text-sm font-light text-zinc-400 dark:text-zinc-500 pr-4 tracking-tight">
               {description}
             </div>
           </div>

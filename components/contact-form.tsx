@@ -77,7 +77,7 @@ Message: ${data.message}`,
         <Input
           {...register("name")}
           placeholder="Your Name"
-          className="w-full px-3 py-2 border rounded-md"
+          className="w-full px-3 py-2 border rounded-md dark:border-zinc-700"
         />
         {errors.name && (
           <span className="mt-1 text-sm text-red-600 flex flex-row items-center">
@@ -91,7 +91,7 @@ Message: ${data.message}`,
           {...register("email")}
           type="email"
           placeholder="Your Email"
-          className="w-full px-3 py-2 border rounded-md"
+          className="w-full px-3 py-2 border rounded-md dark:border-zinc-700"
         />
         {errors.email && (
           <span className="mt-1 text-sm text-red-600 flex flex-row items-center">
@@ -104,7 +104,7 @@ Message: ${data.message}`,
         <Textarea
           {...register("message")}
           placeholder="Your Message"
-          className="w-full px-3 py-2 border rounded-md"
+          className="w-full px-3 py-2 border rounded-md dark:border-zinc-700"
         />
         {errors.message && (
           <span className="mt-1 text-sm text-red-600 flex flex-row items-center">
@@ -117,7 +117,7 @@ Message: ${data.message}`,
       </div>
       <Button
         type="submit"
-        className="w-full text-gray-200 dark:text-gray-800 py-2 px-4 rounded-md transition duration-300"
+        className="w-full text-gray-200 dark:text-white py-2 px-4 rounded-md transition duration-300 dark:bg-blue-800/50"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Sending..." : "Send Message"}

@@ -3,6 +3,7 @@ import { Playfair_Display as Serif } from "next/font/google";
 const serif = Serif({
   subsets: ["latin"],
   weight: "variable",
+  // weight: ["300", "400", "500", "600", "700"],
 });
 
 function Headline({
@@ -30,7 +31,7 @@ function MainTitle({
 }) {
   return (
     <span
-      className={`${serif.className} text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white tracking-tighter ${className}`}
+      className={`${serif.className} text-4xl sm:text-5xl font-extrabold text-gray-800 dark:text-white tracking-tighter ${className}`}
     >
       {children}
     </span>
@@ -46,7 +47,7 @@ function Title({
 }) {
   return (
     <h1
-      className={`${serif.className} text-2xl sm:text-3xl font-bold text-gray-600 dark:text-gray-300 tracking-tight ${className}`}
+      className={`${serif.className} text-2xl sm:text-3xl font-extrabold text-zinc-600 dark:text-zinc-300 tracking-tighter ${className}`}
     >
       {children}
     </h1>

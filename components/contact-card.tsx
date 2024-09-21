@@ -7,7 +7,7 @@ function ContactCard() {
     <CustomCard>
       <div className="p-3 sm:p-4">
         <SectionHeader
-          title="Get in touch"
+          title="Get In Touch"
           subtitle="Let's talk about your project or company"
         />
       </div>
