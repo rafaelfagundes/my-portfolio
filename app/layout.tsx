@@ -13,7 +13,7 @@ const sansSerif = SansSerif({
 
 export const metadata: Metadata = {
   title: "Rafael Fagundes",
-  description: "Fullstack / Mobile developer",
+  description: "Full Stack & Mobile Developer",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#eaedf1" },
@@ -29,21 +29,21 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://www.rafaelfagundes.com", // Replace with your actual URL
     title: "Rafael Fagundes",
-    description: "Fullstack / Mobile developer",
+    description: "Full Stack & Mobile Developer",
     images: [
       {
-        url: "https://www.rafaelfagundes.com/img/og-image.jpg", // Replace with your actual OG image URL
+        url: "https://www.rafaelfagundes.com/img/profile.jpg", // Replace with your actual OG image URL
         width: 1200,
-        height: 630,
-        alt: "Rafael Fagundes - Fullstack / Mobile developer",
+        height: 1200,
+        alt: "Rafael Fagundes - Full Stack & Mobile Developer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Rafael Fagundes",
-    description: "Fullstack / Mobile developer",
-    images: ["https://www.rafaelfagundes.com/img/twitter-image.jpg"], // Replace with your actual Twitter image URL
+    description: "Full Stack & Mobile Developer",
+    images: ["https://www.rafaelfagundes.com/img/profile.jpg"], // Replace with your actual Twitter image URL
   },
 };
 
