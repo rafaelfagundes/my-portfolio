@@ -63,7 +63,15 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
         </Providers>
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            unstyled: false,
+            classNames: {
+              toast:
+                "bg-gray-100 dark:bg-zinc-800 text-black dark:text-white rounded-lg shadow-lg border-gray-200 dark:border-zinc-800 border p-4 sm:p-5 w-full max-w-sm",
+            },
+          }}
+        />
       </body>
     </html>
   );

@@ -1,3 +1,10 @@
+import { Playfair_Display as Serif } from "next/font/google";
+
+const serif = Serif({
+  subsets: ["latin"],
+  weight: "variable",
+});
+
 function Headline({
   children,
   className,
@@ -7,7 +14,23 @@ function Headline({
 }) {
   return (
     <span
-      className={`text-6xl font-bold text-gray-800 tracking-tighter ${className}`}
+      className={`text-6xl font-bold text-gray-800 dark:text-white tracking-tighter ${className}`}
+    >
+      {children}
+    </span>
+  );
+}
+
+function MainTitle({
+  children,
+  className,
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <span
+      className={`${serif.className} text-4xl sm:text-5xl font-bold text-gray-800 dark:text-white tracking-tighter ${className}`}
     >
       {children}
     </span>
@@ -23,7 +46,7 @@ function Title({
 }) {
   return (
     <h1
-      className={`text-xl sm:text-2xl font-semibold text-gray-600 dark:text-gray-300 tracking-tight ${className}`}
+      className={`${serif.className} text-2xl sm:text-3xl font-bold text-gray-600 dark:text-gray-300 tracking-tight ${className}`}
     >
       {children}
     </h1>
@@ -39,11 +62,11 @@ function Subtitle({
 }) {
   return (
     <h2
-      className={`text-base sm:text-lg font-semibold text-gray-400 dark:text-gray-450 tracking-tight ${className}`}
+      className={`text-base sm:text-lg font-normal text-gray-400 dark:text-gray-450 tracking-tight ${className}`}
     >
       {children}
     </h2>
   );
 }
 
-export { Headline, Subtitle, Title };
+export { Headline, MainTitle, Subtitle, Title };

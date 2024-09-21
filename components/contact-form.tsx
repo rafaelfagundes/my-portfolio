@@ -54,8 +54,8 @@ Message: ${data.message}`,
         throw new Error("Failed to send message");
       }
 
-      toast("Message sent!", {
-        description: "We'll get back to you as soon as possible.",
+      toast("Message sent! 🎉", {
+        description: "I'll get back to you as soon as possible.",
       });
       reset();
     } catch (error) {

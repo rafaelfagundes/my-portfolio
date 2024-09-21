@@ -13,8 +13,8 @@ function ProjectsCard() {
         <SectionHeader
           title="Featured Projects"
           subtitle="Check out my projects"
-          buttonText="View all"
-          buttonLink="/projects"
+          // buttonText="View all"
+          // buttonLink="/projects"
         />
         <Tabs defaultValue="web" className="w-full mt-6">
           <TabsList className="grid w-full grid-cols-2 bg-[#e7eaef] dark:bg-[#161616]">
