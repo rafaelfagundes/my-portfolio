@@ -1,60 +1,23 @@
 "use client";
-import {
-  ArrowRight,
-  CaretRight,
-  GithubLogo,
-  Globe,
-} from "@phosphor-icons/react/dist/ssr";
-import { Subtitle, Title } from "./typography";
-import { Button } from "./ui/button";
+import { projects } from "@/app/data";
+import { CaretRight, GithubLogo, Globe } from "@phosphor-icons/react/dist/ssr";
+import { useRouter } from "next/navigation";
 import CustomCard from "./ui/custom-card";
+import SectionHeader from "./ui/section-header";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./ui/tabs";
 
-const projects = {
-  web: [
-    {
-      emoji: "🔥",
-      title: "NextBoilerplate",
-      description:
-        "A Next.js boilerplate with Tailwind CSS, TypeScript, ESLint, Prettier, and more.",
-      link: "https://github.com/rafaelfagundes/next-boilerplate",
-      location: "github",
-    },
-    {
-      emoji: "💅",
-      title: "Elisa Studio",
-      description:
-        "A website for a beautician based in Kitchener, Ontario, Canada.",
-      link: "https://elisa-studio.vercel.app/",
-      location: "web",
-    },
-  ],
-  mobile: [
-    {
-      emoji: "📱",
-      title: "WordScrambler",
-      description:
-        "A Next.js boilerplate with Tailwind CSS, TypeScript, ESLint, Prettier, and more.",
-      link: "https://github.com/rafaelfagundes/next-boilerplate",
-      location: "github",
-    },
-  ],
-};
-
 function ProjectsCard() {
+  const router = useRouter();
+
   return (
     <CustomCard>
       <div className="p-3 sm:p-4">
-        <div className="flex flex-row items-start justify-between">
-          <div className="flex flex-col">
-            <Title>Featured Projects</Title>
-            <Subtitle>Check out my projects</Subtitle>
-          </div>
-          <Button variant="secondary" className="text-sm">
-            View all
-            <ArrowRight size={16} className="ml-1" />
-          </Button>
-        </div>
+        <SectionHeader
+          title="Featured Projects"
+          subtitle="Check out my projects"
+          buttonText="View all"
+          buttonLink="/projects"
+        />
         <Tabs defaultValue="web" className="w-full mt-6">
           <TabsList className="grid w-full grid-cols-2 bg-[#e7eaef] dark:bg-[#161616]">
             <TabsTrigger
@@ -71,26 +34,30 @@ function ProjectsCard() {
             </TabsTrigger>
           </TabsList>
           <TabsContent value="web" className="pt-2 gap-3 flex flex-col">
-            {projects.web.map((item) => (
-              <ProjectCard
-                emoji={item.emoji}
-                title={item.title}
-                description={item.description}
-                link={item.link}
-                location={item.location}
-              />
-            ))}
+            {projects.web
+              .filter((item) => item.featured)
+              .map((item) => (
+                <ProjectCard
+                  emoji={item.emoji}
+                  title={item.title}
+                  description={item.description}
+                  link={item.link}
+                  location={item.location}
+                />
+              ))}
           </TabsContent>
           <TabsContent value="mobile" className="gap-3 flex flex-col -mt-0.5">
-            {projects.mobile.map((item) => (
-              <ProjectCard
-                emoji={item.emoji}
-                title={item.title}
-                description={item.description}
-                link={item.link}
-                location={item.location}
-              />
-            ))}
+            {projects.mobile
+              .filter((item) => item.featured)
+              .map((item) => (
+                <ProjectCard
+                  emoji={item.emoji}
+                  title={item.title}
+                  description={item.description}
+                  link={item.link}
+                  location={item.location}
+                />
+              ))}
           </TabsContent>
         </Tabs>
       </div>
@@ -130,17 +97,21 @@ function ProjectCard({
     );
 
   return (
-    <CustomCard level={2} onClick={() => window.open(link, "_blank")}>
+    <CustomCard
+      level={2}
+      onClick={() => window.open(link, "_blank")}
+      className="min-h-20 flex flex-col justify-center"
+    >
       <div className="flex flex-row items-center justify-between">
         <div className="flex flex-row items-center">
           <div className="text-xs font-medium text-zinc-400 dark:text-zinc-500 mr-2 px-2">
             <Emoji>{emoji}</Emoji>
           </div>
-          <div className="flex flex-col">
-            <div className="text-base font-bold text-zinc-500 dark:text-zinc-300">
+          <div className="flex flex-col gap-1">
+            <div className="text-sm font-medium text-zinc-500 dark:text-zinc-300">
               {title}
             </div>
-            <div className="text-sm font-medium text-zinc-400 dark:text-zinc-500 pr-4">
+            <div className="text-xs font-light text-zinc-400 dark:text-zinc-500 pr-4">
               {description}
             </div>
           </div>

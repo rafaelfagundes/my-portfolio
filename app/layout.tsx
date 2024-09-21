@@ -57,6 +57,7 @@ export default function RootLayout({
         className={`${sansSerif.className} antialiased bg-[#eaedf1] dark:bg-[#161616] p-4 sm:max-w-xl mx-auto`}
       >
         <Providers>
+          <div className="h-[62px]"></div>
           <Navbar />
           <main>{children}</main>
           <Footer />

@@ -49,28 +49,33 @@ function Navbar() {
   };
 
   return (
-    <CustomCard>
-      <div className="flex flex-row items-center justify-between p-1">
-        <div className="flex flex-row items-center gap-3">
-          {navItems.map((item) => (
-            <Icon
-              key={item.href}
-              active={currentPage === item.href}
-              handleClick={() => handleClick(item.href)}
-              iconSize={iconSize}
-              icon={item.icon}
-            />
-          ))}
-        </div>
-        <div className="flex flex-row items-center gap-3">
-          <ThemeSwitcher></ThemeSwitcher>
-          <Button>
-            <TrendUp size={iconSize - 6} className="mr-1" />
-            <p className="text-xs">Hire Me</p>
-          </Button>
-        </div>
-      </div>
-    </CustomCard>
+    <>
+      <div className="h-5 w-full  bg-[#eaedf1] dark:bg-[#161616] fixed top-0 z-40"></div>
+      <nav className="fixed top-4 left-0 right-0 z-50 flex flex-col items-center justify-between max-w-xl mx-auto px-4">
+        <CustomCard blurred={true}>
+          <div className="flex flex-row items-center justify-between p-1">
+            <div className="flex flex-row items-center gap-3">
+              {navItems.map((item) => (
+                <Icon
+                  key={item.href}
+                  active={currentPage === item.href}
+                  handleClick={() => handleClick(item.href)}
+                  iconSize={iconSize}
+                  icon={item.icon}
+                />
+              ))}
+            </div>
+            <div className="flex flex-row items-center gap-3">
+              <ThemeSwitcher></ThemeSwitcher>
+              <Button>
+                <TrendUp size={iconSize - 6} className="mr-1" />
+                <p className="text-xs">Hire Me</p>
+              </Button>
+            </div>
+          </div>
+        </CustomCard>
+      </nav>
+    </>
   );
 }
 
