@@ -12,7 +12,7 @@ function ProjectsCard() {
       <div className="p-3 sm:p-4">
         <SectionHeader
           title="Featured Projects"
-          subtitle="Check out my projects"
+          subtitle="Here are some of my projects"
           // buttonText="View all"
           // buttonLink="/projects"
         />

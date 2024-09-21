@@ -40,9 +40,6 @@ const Footer = () => {
     return new Date().getFullYear();
   }
 
-  const iconSize = 24;
-  const iconClassName = "text-gray-500 dark:text-gray-300 cursor-pointer";
-
   return (
     <footer>
       <CustomCard className="max-w-7xl mx-auto">
