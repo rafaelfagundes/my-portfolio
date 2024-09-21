@@ -73,8 +73,8 @@ function Navbar() {
             <div className="flex flex-row items-center gap-3">
               <ThemeSwitcher></ThemeSwitcher>
               <Button
-                variant="outline"
-                className="bg-orange-100 dark:bg-indigo-900"
+                variant="secondary"
+                className="bg-orange-100 hover:bg-orange-200 dark:bg-indigo-900 dark:hover:bg-indigo-800"
                 onClick={() =>
                   window.open("https://www.linkedin.com/in/rafaelcfl/")
                 }
