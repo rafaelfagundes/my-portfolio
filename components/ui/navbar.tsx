@@ -11,39 +11,7 @@ const mono = Mono({
   weight: ["300", "400", "500"],
 });
 
-// const navItems = [
-//   {
-//     href: "/",
-//     label: "Home",
-//     icon: <House />,
-//   },
-//   {
-//     href: "/about",
-//     label: "About",
-//     icon: <UserCircle />,
-//   },
-//   {
-//     href: "/projects",
-//     label: "Projects",
-//     icon: <Package />,
-//   },
-//   {
-//     href: "/contact",
-//     label: "Contact",
-//     icon: <ChatCircle />,
-//   },
-// ];
-
 function Navbar() {
-  // const pathname = usePathname();
-  // const [currentPage, setCurrentPage] = useState("/");
-
-  // const iconSize = 24;
-
-  // useEffect(() => {
-  //   setCurrentPage(pathname);
-  // }, [pathname]);
-
   return (
     <>
       <div className="h-5 w-full  bg-[#eaedf1] dark:bg-[#161616] fixed top-0 z-40"></div>
@@ -59,17 +27,6 @@ function Navbar() {
               </span>
             </div>
 
-            {/* <div className="flex flex-row items-center gap-3">
-              {navItems.map((item) => (
-                <Icon
-                  key={item.href}
-                  active={currentPage === item.href}
-                  iconSize={iconSize}
-                  icon={item.icon}
-                  href={item.href}
-                />
-              ))}
-            </div> */}
             <div className="flex flex-row items-center gap-3">
               <ThemeSwitcher></ThemeSwitcher>
               <Button
@@ -88,36 +45,5 @@ function Navbar() {
     </>
   );
 }
-
-// function Icon({
-//   href,
-//   active,
-//   icon,
-//   iconSize,
-// }: {
-//   href: string;
-//   active: boolean;
-//   icon: React.ReactElement;
-//   iconSize: number;
-// }) {
-//   return (
-//     <Link href={href}>
-//       <div
-//         className={clsx(
-//           "p-1.5 cursor-pointer",
-//           active && "bg-gray-100 dark:bg-gray-700/50 rounded-full"
-//         )}
-//       >
-//         {cloneElement(icon, {
-//           size: iconSize,
-//           className: clsx(
-//             icon.props.className,
-//             active ? "text-black dark:text-white" : "text-gray-400"
-//           ),
-//         })}
-//       </div>
-//     </Link>
-//   );
-// }
 
 export default Navbar;

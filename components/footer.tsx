@@ -55,7 +55,7 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <div className="border-t border-gray-200 dark:border-gray-950 pt-3 flex flex-row justify-center items-center">
+        <div className="border-t border-gray-200 dark:border-zinc-800 pt-3 flex flex-row justify-center items-center">
           <p className="text-sm text-gray-400 dark:text-gray-400 text-center">
             &copy;{` ${getCurrentYear()} Rafael Fagundes.`}
           </p>
