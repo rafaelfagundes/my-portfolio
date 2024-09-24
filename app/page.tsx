@@ -11,6 +11,7 @@ export default function Home() {
       <AboutMeCard></AboutMeCard>
       <ProjectsCard></ProjectsCard>
       <ContactCard></ContactCard>
+      <div className="h-10"></div>
     </PageContainer>
   );
 }
