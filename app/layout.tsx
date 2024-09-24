@@ -73,6 +73,7 @@ export default function RootLayout({
           <Navbar />
           <main>{children}</main>
           <Footer />
+          <div className="h-10"></div>
         </Providers>
         <Toaster
           toastOptions={{
