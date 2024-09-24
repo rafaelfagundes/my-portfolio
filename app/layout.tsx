@@ -54,6 +54,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          defer
+          data-domain="plausible.rfagund.es"
+          src="https://plausible.rfagund.es/js/script.js"
+        ></script>
+      </head>
       <body
         className={`${sansSerif.className} antialiased bg-[#eaedf1] dark:bg-[#161616] p-4 sm:max-w-xl mx-auto`}
       >
