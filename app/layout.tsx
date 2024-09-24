@@ -57,7 +57,7 @@ export default function RootLayout({
       <head>
         <script
           defer
-          data-domain="plausible.rfagund.es"
+          data-domain="rafaelfagundes.com"
           src="https://plausible.rfagund.es/js/script.js"
         ></script>
       </head>
