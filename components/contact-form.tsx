@@ -43,7 +43,7 @@ export default function ContactForm(prop: ContactFormProps) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          content: `New contact form submission:
+          content: `(rafaelfagundes.com) New message:
 Name: ${data.name}
 Email: ${data.email}
 Message: ${data.message}`,
